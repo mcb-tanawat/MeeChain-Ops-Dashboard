@@ -1,0 +1,8 @@
+- environment: env-base-002
+  name: ENV-BASE-002
+  permissions:
+    environments:
+    - all: DENIED
+  base_only: true
+  note: Environment Inheritance Rules Record
+  agent_note: Environment Inheritance Rules Record
