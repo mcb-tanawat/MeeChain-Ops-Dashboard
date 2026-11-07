@@ -1,5 +1,5 @@
 - distribution: meechain-ops-dashboard
   permissions:
-    others: READ_ONLY
+    others: DENIED
     users:
       mcb: MANAGE
