@@ -1,0 +1,84 @@
+- pipeline: meechain-repository-inspects_3
+  name: MEECHAIN-REPOSITORY-INSPECTS 3
+  refs:
+  - :default
+  fail_on_prepare_env_warning: true
+  resources: NANO
+  environments:
+  - '*'
+  events:
+  - type: WEBHOOK
+    totp: true
+  arch: ARM64
+  actions:
+  - action: Verify pipeline context
+    type: BUILD
+    run_next: IN_SOFT_PARALLEL
+    commands: |-
+      echo "MEECHAIN-REPO-VERIFY: pipeline started"
+      echo "Repository ref: $BUDDY_RUN_REF"
+      echo "This initial run validates the Buddy pipeline context only."
+    shell: BASH
+    docker_image_name: library/ubuntu
+    docker_image_tag: "24.04"
+  - action: MEECHAIN-REPOSITORY-INSPECT
+    type: BUILD
+    commands: |-
+      set -eu
+
+      echo "=================================="
+      echo "MEECHAIN REPOSITORY INSPECTION"
+      echo "=================================="
+
+      echo "Run ID: ${BUDDY_RUN_ID:-unknown}"
+      echo "Branch: ${BUDDY_RUN_BRANCH:-unknown}"
+      echo "Ref: ${BUDDY_RUN_REF:-unknown}"
+      echo "Commit: ${BUDDY_RUN_COMMIT:-unknown}"
+      echo "Repository: ${BUDDY_REPO_SLUG:-unknown}"
+
+      echo ""
+      echo "=== GIT IDENTITY ==="
+
+      git rev-parse --show-toplevel
+      git rev-parse HEAD
+
+      echo ""
+      echo "=== GOVERNANCE FILE CHECK ==="
+
+      files="
+      buddy/pipelines/MEECHAIN-REPO-VERIFY.yml
+      buddy/environments/ENV-BASE-002.yml
+      buddy/distributions/MeeChain-Ops-Distribution.yml
+      buddy/distributions/meechain-ops-dashboard.yml
+      "
+
+      missing=0
+
+      for file in $files; do
+        if git ls-files --error-unmatch "$file" >/dev/null 2>&1; then
+          echo "TRACKED: $file"
+        else
+          echo "MISSING OR UNTRACKED: $file"
+          missing=$((missing + 1))
+        fi
+      done
+
+      echo ""
+      echo "=== REPOSITORY SUMMARY ==="
+
+      echo "Tracked files: $(git ls-files | wc -l)"
+      echo "Governance files missing: $missing"
+
+      echo ""
+      echo "=== INSPECTION RESULT ==="
+
+      if [ "$missing" -ne 0 ]; then
+        echo "FAILED: Governance file verification"
+        exit 1
+      fi
+
+      echo "PASSED: Repository inspection"
+      echo "MEECHAIN-REPOSITORY-INSPECT completed."
+    shell: BASH
+    docker_image_name: library/ubuntu
+    docker_image_tag: "24.04"
