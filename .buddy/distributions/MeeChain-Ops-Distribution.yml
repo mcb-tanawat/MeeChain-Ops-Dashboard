@@ -1,0 +1,7 @@
+- distribution: meechain-ops-distribution
+  name: MeeChain Ops Distribution
+  disabled: true
+  permissions:
+    others: READ_ONLY
+    users:
+      mcb: MANAGE
