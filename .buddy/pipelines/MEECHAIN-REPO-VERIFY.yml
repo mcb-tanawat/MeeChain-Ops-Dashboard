@@ -7,3 +7,13 @@
   events:
   - type: WEBHOOK
   arch: ARM64
+  actions:
+  - action: Verify pipeline context
+    type: BUILD
+    commands: |-
+      echo "MEECHAIN-REPO-VERIFY: pipeline started"
+      echo "Repository ref: $BUDDY_RUN_REF"
+      echo "This initial run validates the Buddy pipeline context only."
+    shell: BASH
+    docker_image_name: library/ubuntu
+    docker_image_tag: "24.04"
