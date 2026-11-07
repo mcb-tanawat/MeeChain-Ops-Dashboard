@@ -1,0 +1,9 @@
+- pipeline: meechain-repo-verify
+  name: MEECHAIN-REPO-VERIFY
+  refs:
+  - refs/heads/main
+  fail_on_prepare_env_warning: true
+  resources: NANO
+  events:
+  - type: WEBHOOK
+  arch: ARM64
