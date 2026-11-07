@@ -1,7 +1,6 @@
 - environment: env-base-002
   name: ENV-BASE-002
   permissions:
-    others: DENIED
     environments:
     - all: DENIED
   base_only: true
