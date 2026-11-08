@@ -4,5 +4,6 @@
     environments:
     - all: DENIED
   base_only: true
+  icon: 🥈
   note: Environment Inheritance Rules Record
   agent_note: Environment Inheritance Rules Record
