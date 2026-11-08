@@ -4,3 +4,19 @@
   fail_on_prepare_env_warning: true
   events:
   - type: WEBHOOK
+  actions:
+  - action: '    bdy sb destroy "$SB" -f'
+    type: VM_LINUX
+    commands: |
+      - action: Smoke test in a sandbox
+        type: BDY_CLI
+        integration: buddy
+        commands: |-
+          SB="smoke-$BUDDY_RUN_ID"
+          bdy sb create -i "$SB" -n "Smoke test #$BUDDY_RUN_ID" --fetch --app-command "npm start" --timeout 900 --wait-for-apps 180
+          bdy sb exec command "$SB" "curl -fsS localhost:3000/health" --wait
+          bdy sb destroy "$SB" -f
+    instance_type: GENERAL_MEDIUM
+    mount_paths:
+    - pipeline_path: /
+      vm_path: /buddy
