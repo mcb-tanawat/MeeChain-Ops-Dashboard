@@ -24,3 +24,14 @@
   trigger_conditions:
   - trigger_condition: ON_CHANGE
   docker_build_cache: PROJECT
+  actions:
+  - action: $BUDDY_ACTION_RUN_LOOP_I
+    type: VM_LINUX
+    loop:
+    - /.buddy
+    commands: $BUDDY_ACTION_RUN_LOOP_I
+    vm_from_prev_action: true
+    instance_type: GENERAL_MEDIUM
+    mount_paths:
+    - pipeline_path: /.buddy/
+      vm_path: /buddy
