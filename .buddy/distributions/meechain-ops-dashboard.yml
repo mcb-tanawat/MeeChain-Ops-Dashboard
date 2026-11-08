@@ -1,7 +1,1 @@
 - distribution: meechain-ops-dashboard
-  disabled: true
-  permissions:
-    others: READ_ONLY
-    users:
-      mcb: MANAGE
-      agent.meechain: MANAGE
