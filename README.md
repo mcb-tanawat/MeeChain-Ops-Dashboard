@@ -1,6 +1,10 @@
 # MeeChain Ops Dashboard
 
+<img width="1536" height="1024" alt="1001395815" src="https://github.com/user-attachments/assets/53a8695b-fe7e-4f0d-851c-3ad7c1fb3061" />
+
+
 MeeChain Ops Dashboard is a TypeScript monorepo for an operations dashboard and service tooling. The repository currently includes a React/Vite mockup preview shell, an Express API scaffold, OpenAPI-driven code generation, and a PostgreSQL/Drizzle database layer.
+
 
 ## Overview
 
@@ -53,3 +57,10 @@ The codebase is in an early scaffold stage:
 ├── pnpm-workspace.yaml
 ├── replit.md
 └── README.md
+```
+
+# ตัวอย่าง UI
+<img width="1280" height="800" alt="1001395819" src="https://github.com/user-attachments/assets/a0e5f0d7-b92a-403c-ac33-101a4851f49d" />
+
+
+## MeeChain 
