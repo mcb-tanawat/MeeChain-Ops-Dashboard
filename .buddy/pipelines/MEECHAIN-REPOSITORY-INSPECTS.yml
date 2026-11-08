@@ -2,6 +2,11 @@
   name: MEECHAIN-REPOSITORY-INSPECTS
   refs:
   - refs/heads/main
+  - refs/heads/*
+  - refs/pull/*
+  - refs/heads/dev-*
+  - refs/tags/v*
+  - refs/heads/test-*
   execution_message_template: $BUDDY_PROJECT
   ignore_fail_on_project_status: true
   skip_queued_runs: SAME_ENVIRONMENT
