@@ -7,6 +7,7 @@
   skip_queued_runs: SAME_ENVIRONMENT
   cancel_inprogress_runs: ALWAYS
   fetch_all_refs: true
+  concurrent_pipeline_runs: true
   do_not_create_commit_status: true
   resources: NANO
   git_changeset_base: LATEST_RUN_MATCHING_REF
@@ -19,10 +20,6 @@
     - Configuration-Precedence
   events:
   - type: WEBHOOK
-  permissions:
-    others: DEFAULT
-    groups:
-      Domain Ownership: DEFAULT
   trigger_conditions:
   - trigger_condition: ON_CHANGE
   docker_build_cache: PROJECT
