@@ -1,6 +1,6 @@
 - distribution: meechain-ops-dashboard
   permissions:
-    others: DENIED
+    others: READ_ONLY
     users:
       mcb: MANAGE
       agent.meechain: MANAGE
