@@ -21,4 +21,6 @@
     others: DEFAULT
     groups:
       Domain Ownership: DEFAULT
+  trigger_conditions:
+  - trigger_condition: ON_CHANGE
   docker_build_cache: PROJECT
