@@ -9,4 +9,8 @@
   events:
   - type: WEBHOOK
     totp: true
+  permissions:
+    others: DEFAULT
+    groups:
+      Domain Ownership: DEFAULT
   arch: ARM64
