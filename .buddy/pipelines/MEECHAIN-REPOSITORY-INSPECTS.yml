@@ -2,8 +2,16 @@
   name: MEECHAIN-REPOSITORY-INSPECTS
   refs:
   - refs/heads/main
-  fail_on_prepare_env_warning: true
+  execution_message_template: $BUDDY_PROJECT
+  ignore_fail_on_project_status: true
+  skip_queued_runs: SAME_ENVIRONMENT
+  cancel_inprogress_runs: ALWAYS
+  fetch_all_refs: true
+  do_not_create_commit_status: true
   resources: NANO
+  git_changeset_base: LATEST_RUN_MATCHING_REF
+  filesystem_changeset_base: CONTENTS
+  description_required: true
   environments:
   - '*'
   events:
@@ -13,4 +21,4 @@
     others: DEFAULT
     groups:
       Domain Ownership: DEFAULT
-  arch: ARM64
+  docker_build_cache: PROJECT
