@@ -5,17 +5,70 @@
   events:
   - type: WEBHOOK
   actions:
-  - action: '    bdy sb destroy "$SB" -f'
+  - action: Test
     type: VM_LINUX
+    timeout: 5000
+    ignore_errors: true
+    trigger_conditions:
+    - trigger_condition: TRIGGERING_USER_IS_IN_GROUP
+      trigger_group: Domain Access Permission
     commands: |
-      - action: Smoke test in a sandbox
-        type: BDY_CLI
-        integration: buddy
-        commands: |-
-          SB="smoke-$BUDDY_RUN_ID"
-          bdy sb create -i "$SB" -n "Smoke test #$BUDDY_RUN_ID" --fetch --app-command "npm start" --timeout 900 --wait-for-apps 180
-          bdy sb exec command "$SB" "curl -fsS localhost:3000/health" --wait
-          bdy sb destroy "$SB" -f
+      visual_tests:
+        suite: "My First Suite"
+
+        capture:
+          color_scheme: light
+
+          resolutions:
+            - name: HD
+              width: 1280
+              height: 720
+              priority: 1
+
+            - name: Full-HD
+              width: 1920
+              height: 1080
+              priority: 1
+
+            - name: Laptop
+              width: 1536
+              height: 864
+              priority: 1
+
+            - name: HD-Laptop
+              width: 1600
+              height: 900
+              priority: 1
+
+            - name: QHD
+              width: 2560
+              height: 1440
+              priority: 2
+
+            - name: UHD-4K
+              width: 3840
+              height: 2160
+              priority: 2
+
+            - name: iPad-Mini
+              width: 768
+              height: 1024
+              priority: 2
+
+        comparison:
+          baseline_branch: main
+          auto_approve_branches: []
+          threshold: 0.1
+          views_grouping_separator: "/"
+
+        rendering:
+          timeout: 60
+          skip_larger_resolutions: false
+          post_capture_js: false
+
+        governance:
+          require_owner_approval: true
+          auto_approve: false
     instance_type: GENERAL_MEDIUM
     mount_paths:
     - pipeline_path: /
