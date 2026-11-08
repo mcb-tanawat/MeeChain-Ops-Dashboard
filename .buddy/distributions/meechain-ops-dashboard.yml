@@ -3,3 +3,4 @@
     others: DENIED
     users:
       mcb: MANAGE
+      agent.meechain: MANAGE
