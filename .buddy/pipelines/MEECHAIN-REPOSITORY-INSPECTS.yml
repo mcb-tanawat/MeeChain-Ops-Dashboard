@@ -14,7 +14,6 @@
   filesystem_changeset_base: CONTENTS
   description_required: true
   environments:
-  - '*'
   - environment: ENV-BASE-001
     tags:
     - Configuration-Precedence
