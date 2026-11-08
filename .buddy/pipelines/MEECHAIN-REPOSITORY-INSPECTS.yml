@@ -8,4 +8,5 @@
   - '*'
   events:
   - type: WEBHOOK
+    totp: true
   arch: ARM64
