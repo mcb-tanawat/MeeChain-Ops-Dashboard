@@ -25,3 +25,11 @@
     mount_paths:
     - pipeline_path: /
       vm_path: /buddy
+  - action: apt updated 2
+    type: VM_LINUX
+    disabled: true
+    commands: apt updated
+    instance_type: GENERAL_MEDIUM
+    mount_paths:
+    - pipeline_path: /
+      vm_path: /buddy
