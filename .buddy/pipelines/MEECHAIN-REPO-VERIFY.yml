@@ -11,6 +11,17 @@
   resources: NANO
   git_changeset_base: LATEST_RUN_MATCHING_REF
   description_required: true
+  environments:
+  - environment: ENV-BASE-001
+    tags:
+    - Configuration-Precedence
+    scope: PROJECT
+  - environment: ENV-BASE-002
+    tags:
+    - Governance
+  - environment: ENV-BASE-003
+    tags:
+    - Inheritance-Rules
   events:
   - type: WEBHOOK
   docker_build_cache: WORKSPACE
