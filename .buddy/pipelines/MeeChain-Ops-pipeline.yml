@@ -1,0 +1,18 @@
+- pipeline: meechain-ops-pipeline
+  name: MeeChain-Ops-pipeline
+  refs:
+  - refs/heads/main
+  skip_queued_runs: NEVER
+  description_required: true
+  folder: 'BUDDY '
+  environments:
+  - tags:
+    - Inheritance-Rules
+    - Governance
+    scope: WORKSPACE
+  events:
+  - type: WEBHOOK
+  permissions:
+    others: RUN_ONLY
+    users:
+      mcb: READ_WRITE
