@@ -3,5 +3,3 @@
     others: READ_ONLY
     users:
       agent.meechain: MANAGE
-    groups:
-      Domain Ownership: READ_ONLY
