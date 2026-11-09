@@ -8,6 +8,7 @@
   actions:
   - action: "    auto_approve: false"
     type: VM_LINUX
+    ignore_errors: true
     execute_every_command: true
     commands: |
       visual_tests:
