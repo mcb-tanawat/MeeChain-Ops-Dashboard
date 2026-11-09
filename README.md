@@ -14,7 +14,11 @@ This project is organized as a pnpm workspace with separate packages for:
 - an OpenAPI contract and generated client/schema code,
 - a database package using Drizzle ORM.
 
-The repository is intentionally structured as a reusable foundation for building a dashboard product and backend services around a shared contract-first API workflow.
+The repository is intentionally structured as a reusable foundation for building a dashboard product and backend 
+services around a shared contract-first API workflow.
+
+<img width="1800" height="1180" alt="1001395814" src="https://github.com/user-attachments/assets/daf59916-90d9-429b-9d38-696bc44b5892" />
+
 
 ## Current status
 
@@ -62,5 +66,9 @@ The codebase is in an early scaffold stage:
 # ตัวอย่าง UI
 <img width="1280" height="800" alt="1001395819" src="https://github.com/user-attachments/assets/a0e5f0d7-b92a-403c-ac33-101a4851f49d" />
 
-
-## MeeChain 
+### MCB ###
+```
+## ขอบคุณทีม: MeeChain 
+💌 mail: mcb@meechain.live
+📡 app.meechain.live
+```
