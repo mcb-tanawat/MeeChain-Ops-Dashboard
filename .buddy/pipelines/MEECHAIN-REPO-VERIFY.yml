@@ -25,6 +25,8 @@
   events:
   - type: WEBHOOK
   - type: ENVIRONMENT_CREATE
+    environments:
+    - '*'
   docker_build_cache: WORKSPACE
   actions:
   - action: Verify pipeline context
