@@ -7,8 +7,8 @@
   folder: 'BUDDY '
   environments:
   - tags:
-    - Inheritance-Rules
     - Governance
+    - Inheritance-Rules
     scope: WORKSPACE
   events:
   - type: WEBHOOK
@@ -19,7 +19,6 @@
   actions:
   - action: apt updated
     type: VM_LINUX
-    disabled: true
     commands: apt updated
     instance_type: GENERAL_MEDIUM
     mount_paths:
