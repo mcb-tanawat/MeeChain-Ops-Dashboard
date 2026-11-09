@@ -7,8 +7,8 @@
   folder: 'BUDDY '
   environments:
   - tags:
-    - Governance
     - Inheritance-Rules
+    - Governance
     scope: WORKSPACE
   events:
   - type: WEBHOOK
@@ -18,6 +18,14 @@
       mcb: READ_WRITE
   actions:
   - action: apt updated
+    type: VM_LINUX
+    disabled: true
+    commands: apt updated
+    instance_type: GENERAL_MEDIUM
+    mount_paths:
+    - pipeline_path: /
+      vm_path: /buddy
+  - action: apt updated 4
     type: VM_LINUX
     disabled: true
     commands: apt updated
