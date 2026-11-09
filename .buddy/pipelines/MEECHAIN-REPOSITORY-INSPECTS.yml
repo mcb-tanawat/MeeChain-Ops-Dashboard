@@ -33,8 +33,6 @@
     loop:
     - /.buddy
     commands: |-
-      cd ~/MeeChain-Ops-Dashboard
-
       echo "=== ENV-BASE-002 CURRENT RECORD ==="
       cat .buddy/environments/ENV-BASE-002.yml
 
