@@ -5,6 +5,9 @@
   fail_on_prepare_env_warning: true
   events:
   - type: WEBHOOK
+  - type: ENVIRONMENT_CREATE
+    environments:
+    - '*'
   actions:
   - action: "    auto_approve: false"
     type: VM_LINUX
