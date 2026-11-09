@@ -8,6 +8,7 @@
   actions:
   - action: "    auto_approve: false"
     type: VM_LINUX
+    execute_every_command: true
     commands: |
       visual_tests:
         suite: "My First Suite"
