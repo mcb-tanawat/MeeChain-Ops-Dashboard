@@ -24,6 +24,7 @@
     - Inheritance-Rules
   events:
   - type: WEBHOOK
+  - type: ENVIRONMENT_CREATE
   docker_build_cache: WORKSPACE
   actions:
   - action: Verify pipeline context
