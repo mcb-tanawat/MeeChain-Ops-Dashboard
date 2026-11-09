@@ -38,11 +38,6 @@
               height: 900
               priority: 1
 
-            - name: QHD
-              width: 2560
-              height: 1440
-              priority: 2
-
             - name: UHD-4K
               width: 3840
               height: 2160
