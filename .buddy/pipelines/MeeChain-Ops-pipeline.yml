@@ -16,3 +16,12 @@
     others: RUN_ONLY
     users:
       mcb: READ_WRITE
+  actions:
+  - action: apt updated
+    type: VM_LINUX
+    disabled: true
+    commands: apt updated
+    instance_type: GENERAL_MEDIUM
+    mount_paths:
+    - pipeline_path: /
+      vm_path: /buddy
