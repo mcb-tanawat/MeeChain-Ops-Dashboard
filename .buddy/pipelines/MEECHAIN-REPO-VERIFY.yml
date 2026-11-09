@@ -5,6 +5,7 @@
   ignore_fail_on_project_status: true
   cancel_inprogress_runs: SAME_REF
   auto_clear_cache: true
+  concurrent_pipeline_runs: true
   clone_depth: 2
   do_not_create_commit_status: true
   resources: NANO
