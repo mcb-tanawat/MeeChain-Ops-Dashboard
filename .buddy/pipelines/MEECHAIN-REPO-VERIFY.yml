@@ -2,12 +2,17 @@
   name: MEECHAIN-REPO-VERIFY
   refs:
   - refs/heads/main
-  fail_on_prepare_env_warning: true
+  ignore_fail_on_project_status: true
+  cancel_inprogress_runs: SAME_REF
+  auto_clear_cache: true
+  clone_depth: 2
+  do_not_create_commit_status: true
   resources: NANO
-  folder: 'BUDDY '
+  git_changeset_base: LATEST_RUN_MATCHING_REF
+  description_required: true
   events:
   - type: WEBHOOK
-  arch: ARM64
+  docker_build_cache: WORKSPACE
   actions:
   - action: Verify pipeline context
     type: BUILD
