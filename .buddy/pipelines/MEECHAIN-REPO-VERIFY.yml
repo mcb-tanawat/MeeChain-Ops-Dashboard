@@ -6,10 +6,10 @@
   always_from_scratch: true
   ignore_fail_on_project_status: true
   skip_queued_runs: NEVER
+  cancel_inprogress_runs: SAME_REF
   auto_clear_cache: true
   fail_on_prepare_env_warning: true
   clone_depth: 1
-  do_not_create_commit_status: true
   resources: NANO
   description_required: true
   permissions:
@@ -17,7 +17,7 @@
     users:
       agent.node-1: READ_WRITE
       mcb: READ_WRITE
-  docker_build_cache: PROJECT
+  docker_build_cache: WORKSPACE
   actions:
   - action: Verify pipeline context
     type: BUILD
