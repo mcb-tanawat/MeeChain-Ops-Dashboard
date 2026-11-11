@@ -28,5 +28,5 @@
     cached_dirs:
     - /
     shell: BASH
-    docker_image_name: library/ubuntu
-    docker_image_tag: "24.04"
+    image_location: ACTION
+    docker_registry: DOCKER_HUB
