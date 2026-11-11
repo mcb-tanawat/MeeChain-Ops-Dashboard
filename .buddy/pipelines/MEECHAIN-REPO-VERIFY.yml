@@ -2,26 +2,9 @@
   name: MEECHAIN-REPO-VERIFY
   refs:
   - refs/heads/main
-  execution_message_template: MEECHAIN-REPO-VERIFY
-  always_from_scratch: true
-  ignore_fail_on_project_status: true
-  skip_queued_runs: SAME_ENVIRONMENT
-  cancel_inprogress_runs: SAME_ENVIRONMENT
-  auto_clear_cache: true
-  clone_depth: 2
-  do_not_create_commit_status: true
+  fail_on_prepare_env_warning: true
   resources: NANO
-  description_required: true
-  environments:
-  - environment: ENV-BASE-002
-    tags:
-    - Governance
-  events:
-  - type: WEBHOOK
-  - type: ENVIRONMENT_CREATE
-    environments:
-    - '*'
-  docker_build_cache: PROJECT
+  arch: ARM64
   actions:
   - action: Verify pipeline context
     type: BUILD
@@ -32,9 +15,3 @@
     shell: BASH
     docker_image_name: library/ubuntu
     docker_image_tag: "24.04"
-  - action: "    auto_approve: false"
-    type: VM_LINUX
-    instance_type: GENERAL_MEDIUM
-    mount_paths:
-    - pipeline_path: /
-      vm_path: /buddy
