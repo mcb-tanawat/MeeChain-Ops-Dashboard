@@ -5,8 +5,10 @@
   target_site_url: https://app.meechain.live
   always_from_scratch: true
   ignore_fail_on_project_status: true
+  skip_queued_runs: NEVER
   auto_clear_cache: true
   fail_on_prepare_env_warning: true
+  clone_depth: 1
   do_not_create_commit_status: true
   resources: NANO
   description_required: true
