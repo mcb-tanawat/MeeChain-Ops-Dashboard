@@ -8,6 +8,7 @@
     others: DEFAULT
     users:
       agent.node-1: READ_WRITE
+      mcb: READ_WRITE
   arch: ARM64
   actions:
   - action: Verify pipeline context
