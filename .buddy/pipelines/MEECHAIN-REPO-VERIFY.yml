@@ -2,14 +2,20 @@
   name: MEECHAIN-REPO-VERIFY
   refs:
   - refs/heads/main
+  target_site_url: https://app.meechain.live
+  always_from_scratch: true
+  ignore_fail_on_project_status: true
+  auto_clear_cache: true
   fail_on_prepare_env_warning: true
+  do_not_create_commit_status: true
   resources: NANO
+  description_required: true
   permissions:
     others: DEFAULT
     users:
       agent.node-1: READ_WRITE
       mcb: READ_WRITE
-  arch: ARM64
+  docker_build_cache: PROJECT
   actions:
   - action: Verify pipeline context
     type: BUILD
