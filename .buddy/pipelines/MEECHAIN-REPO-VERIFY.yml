@@ -4,6 +4,10 @@
   - refs/heads/main
   fail_on_prepare_env_warning: true
   resources: NANO
+  permissions:
+    others: DEFAULT
+    users:
+      agent.node-1: READ_WRITE
   arch: ARM64
   actions:
   - action: Verify pipeline context
