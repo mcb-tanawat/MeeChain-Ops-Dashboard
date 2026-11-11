@@ -12,6 +12,8 @@
       echo "MEECHAIN-REPO-VERIFY: pipeline started"
       echo "Repository ref: $BUDDY_RUN_REF"
       echo "This initial run validates the Buddy pipeline context only."
+    cached_dirs:
+    - /
     shell: BASH
     docker_image_name: library/ubuntu
     docker_image_tag: "24.04"
